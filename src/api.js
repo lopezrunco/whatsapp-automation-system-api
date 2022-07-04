@@ -48,7 +48,7 @@ const updateList = require('./controllers/list/update')
 app.post('/login', login)
 app.post('/register', register)
 app.get('/admin/users', getAllUsers)
-// app.get('/admin/users/:id', getUserById)
+app.get('/admin/users/:id', getUserById)
 
 // Lists
 // app.get('/lists', getAllLists)
