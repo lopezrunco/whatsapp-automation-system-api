@@ -10,7 +10,8 @@ const listSchema = new Schema({
         type: String,
         required: false,
         trim: true
-    }, numbers: {
+    },
+    numbers: {
         type: Array,
         default: []
     }

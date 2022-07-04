@@ -21,7 +21,8 @@ const userSchema = new Schema({
         type: String,
         required: true,
         trim: true
-    }, lists: {
+    }, 
+    lists: {
         type: [listSchema],
         default: () => ([]) // If the users doesn't have list, add an empty list
     }
