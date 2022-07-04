@@ -47,15 +47,15 @@ const updateList = require('./controllers/list/update')
 // Users
 app.post('/login', login)
 app.post('/register', register)
-app.get('/admin/users', getAllUsers)
-app.get('/admin/users/:id', getUserById)
+app.get('/admin/users', checkUserCredentials(), getAllUsers)
+app.get('/admin/users/:id', checkUserCredentials(), getUserById)
 
 // Lists
-// app.get('/lists', getAllLists)
-// app.get('/lists/:id', getListById)
-// app.post('/lists', createList)
-// app.delete('/lists/:id', deleteList)
-// app.put('/lists/:id', updateList)
+app.get('/lists', checkUserCredentials(), getAllLists)
+// app.get('/lists/:id', checkUserCredentials(), getListById)
+// app.post('/lists', checkUserCredentials(), createList)
+// app.delete('/lists/:id', checkUserCredentials(), deleteList)
+// app.put('/lists/:id', checkUserCredentials(), updateList)
 
 // Connect to database
 mongoose
