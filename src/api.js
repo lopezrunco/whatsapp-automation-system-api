@@ -52,7 +52,7 @@ app.get('/admin/users/:id', checkUserCredentials(), getUserById)
 
 // Lists
 app.get('/lists', checkUserCredentials(), getAllLists)
-// app.get('/lists/:id', checkUserCredentials(), getListById)
+app.get('/lists/:id', checkUserCredentials(), getListById)
 // app.post('/lists', checkUserCredentials(), createList)
 // app.delete('/lists/:id', checkUserCredentials(), deleteList)
 // app.put('/lists/:id', checkUserCredentials(), updateList)
