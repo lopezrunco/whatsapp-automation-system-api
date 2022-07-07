@@ -55,7 +55,7 @@ app.get('/lists', checkUserCredentials(), getAllLists)
 app.get('/lists/:id', checkUserCredentials(), getListById)
 app.post('/lists', checkUserCredentials(), createList)
 app.delete('/lists/:id', checkUserCredentials(), deleteList)
-// app.put('/lists/:id', checkUserCredentials(), updateList)
+app.put('/lists/:id', checkUserCredentials(), updateList)
 
 // Connect to database
 mongoose
