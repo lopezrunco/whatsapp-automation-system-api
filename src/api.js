@@ -42,7 +42,13 @@ const createList = require('./controllers/list/create')
 const deleteList = require('./controllers/list/delete')
 const updateList = require('./controllers/list/update')
 
+// QR
+const generateQR = require('./controllers/qrcode/generate')
+
 // Routes ------------------------------------------------------------------------------------- //
+
+// Security
+app.get('/auth/refresh', checkUserCredentials('REFRESH'), refresh)
 
 // Users
 app.post('/login', login)
@@ -56,6 +62,9 @@ app.get('/lists/:id', checkUserCredentials(), getListById)
 app.post('/lists', checkUserCredentials(), createList)
 app.delete('/lists/:id', checkUserCredentials(), deleteList)
 app.put('/lists/:id', checkUserCredentials(), updateList)
+
+// QR
+app.get('/qr', checkUserCredentials(), generateQR)
 
 // Connect to database
 mongoose
